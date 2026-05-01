@@ -1,8 +1,74 @@
- html {
-        font-size: 22px;
-    }
+/* COLOR THEME */
+:root {
+    --bg-dark: #0f172a;
+    --card-bg: rgba(30, 41, 59, 0.7);
+    --neon-cyan: #0ef;
+    --white: #f8fafc;
+}
 
-    body {
-        background-color: #333;
-        color: whitesmoke;
-    }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+}
+
+body {
+    background-color: var(--bg-dark);
+    background-image: radial-gradient(circle at 50% 50%, #1e293b 0%, #0f172a 100%);
+    color: var(--white);
+    display: flex;
+    justify-content: center;
+    padding: 50px 20px;
+}
+
+/* THE FLOATING NEON CARD */
+.portfolio-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    width: 100%;
+    max-width: 800px;
+    padding: 40px;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 30px rgba(0, 238, 255, 0.2);
+}
+
+.nav-header { display: flex; justify-content: space-between; margin-bottom: 40px; }
+.logo span { color: var(--neon-cyan); font-weight: 700; }
+.nav-links a { color: white; margin-left: 20px; transition: 0.3s; }
+.nav-links a:hover { color: var(--neon-cyan); text-shadow: 0 0 10px var(--neon-cyan); }
+
+/* IMAGE GLOW EFFECT */
+.img-glow {
+    width: 140px; height: 140px; border-radius: 50%;
+    background: var(--neon-cyan); box-shadow: 0 0 20px var(--neon-cyan);
+    margin: 0 auto 20px; overflow: hidden;
+}
+.img-glow img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
+
+h2 { color: var(--neon-cyan); margin: 30px 0 15px; font-size: 1.3rem; }
+
+/* TABLE DESIGN */
+table {
+    width: 100%; border-collapse: collapse; margin-bottom: 30px;
+    background: rgba(255, 255, 255, 0.03); border-radius: 10px; overflow: hidden;
+}
+th { background: rgba(0, 238, 255, 0.2); color: var(--neon-cyan); padding: 12px; text-align: left; }
+td { padding: 12px; border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
+
+/* FORM DESIGN */
+.contact-form { display: flex; flex-direction: column; gap: 15px; }
+input, textarea {
+    background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 12px; border-radius: 8px; color: white;
+}
+.send-btn {
+    background: var(--neon-cyan); color: #000; border: none; padding: 12px;
+    border-radius: 8px; font-weight: 700; cursor: pointer;
+    box-shadow: 0 0 15px var(--neon-cyan); transition: 0.3s;
+}
+.send-btn:hover { transform: scale(1.02); box-shadow: 0 0 25px var(--neon-cyan); }
+
+footer { text-align: center; margin-top: 30px; font-size: 0.8rem; opacity: 0.5; }
